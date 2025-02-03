@@ -6,3 +6,26 @@
   margin: 0;
   padding: 0;
 }
+
+/* root variable */
+:root {
+  --primary-color: #219f95;
+  --secondary-color: #afcedd;
+  --text-primary: #1e1e1e;
+  --text-secondary: #696969;
+  --text-link: #234894;
+  --background-color: #ffffff;
+  --white: #fff;
+
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 22px;
+
+  --border-radius-md: 6px;
+  --border-radius-lg: 8px;
+
+  --box-shadow-sm: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  --box-shadow-md: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
