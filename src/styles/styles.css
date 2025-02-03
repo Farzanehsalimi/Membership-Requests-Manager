@@ -46,3 +46,14 @@ html {
   color: var(--white);
   background-color: var(--primary-color);
 }
+
+/* badge */
+.badge {
+  color: var(--text-link);
+  background-color: var(--secondary-color);
+  border-radius: var(--border-radius-md);
+  padding: 1rem 1.8rem;
+  font-size: var(--font-size-lg);
+  font-weight: 900;
+  box-shadow: var(--box-shadow-sm);
+}
