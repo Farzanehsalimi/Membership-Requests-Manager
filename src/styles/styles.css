@@ -29,3 +29,20 @@
   --box-shadow-sm: 0px 2px 4px rgba(0, 0, 0, 0.1);
   --box-shadow-md: 0px 4px 8px rgba(0, 0, 0, 0.15);
 }
+
+html {
+  font-size: 62.5%;
+}
+
+/* btn */
+.btn {
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  border-radius: var(--border-radius-lg);
+  padding: 2rem 1.5rem;
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  color: var(--white);
+  background-color: var(--primary-color);
+}
