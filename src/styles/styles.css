@@ -17,16 +17,16 @@
   --background-color: #ffffff;
   --white: #fff;
 
-  --font-size-xs: 12px;
-  --font-size-sm: 14px;
-  --font-size-md: 16px;
-  --font-size-lg: 18px;
-  --font-size-xl: 22px;
+  --font-size-xs: 1.2rem;
+  --font-size-sm: 1.4rem;
+  --font-size-md: 1.6rem;
+  --font-size-lg: 1.8rem;
+  --font-size-xl: 2.2rem;
 
   --border-radius-md: 6px;
   --border-radius-lg: 8px;
 
-  --box-shadow-sm: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  --box-shadow-sm: 0px 2px 2px rgba(0, 0, 0, 0.1);
   --box-shadow-md: 0px 4px 8px rgba(0, 0, 0, 0.15);
 }
 
@@ -34,17 +34,36 @@ html {
   font-size: 62.5%;
 }
 
+/* container */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
 /* btn */
 .btn {
   cursor: pointer;
-  outline: 0;
   border: 0;
   border-radius: var(--border-radius-lg);
-  padding: 2rem 1.5rem;
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-sm);
   font-weight: 500;
   color: var(--white);
   background-color: var(--primary-color);
+  transition: all 0.3s ease-out;
+  -webkit-tap-highlight-color: transparent;
+  white-space: nowrap;
+}
+.btn:hover {
+  opacity: 0.85;
+}
+.btn:focus {
+  outline: 2px solid rgba(38, 166, 154, 0.7);
+  outline-offset: 2px;
+  background-color: #17716b;
+}
+.btn:active {
+  box-shadow: 0 0 5px rgba(38, 166, 154, 0.5);
+  transform: scale(0.98);
 }
 
 /* badge */
@@ -52,8 +71,136 @@ html {
   color: var(--text-link);
   background-color: var(--secondary-color);
   border-radius: var(--border-radius-md);
-  padding: 1rem 1.8rem;
-  font-size: var(--font-size-lg);
+  padding: 0.6rem 1.4rem;
+  font-size: var(--font-size-md);
   font-weight: 900;
   box-shadow: var(--box-shadow-sm);
+}
+
+/* current requests */
+.current-requests__title {
+  color: var(--text-primary);
+  font-size: var(--font-size-lg);
+  font-weight: 900;
+  margin: 1rem 0 3rem 0;
+}
+.current-requests__items {
+  display: grid;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* current request item */
+.item {
+  box-shadow: var(--box-shadow-md);
+  padding: 1.4rem;
+  border-radius: var(--border-radius-lg);
+}
+
+/* items header */
+.items__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.items__header__link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.items__header__link p {
+  color: var(--text-link);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+.items__header__date {
+  color: var(--text-secondary);
+  font-size: var(--font-size-xs);
+}
+
+/* items content */
+.items__content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "title title"
+    "avatar button";
+  gap: 0.8rem;
+}
+.items__content__title {
+  grid-area: title;
+  margin-top: 1.2rem;
+}
+.items__content__title h2 {
+  color: var(--text-primary);
+  font-size: var(--font-size-md);
+  font-weight: 900;
+}
+.items__content__title__number {
+  color: var(--text-secondary);
+  font-size: var(--font-size-xs);
+}
+.btn--items__content {
+  grid-area: button;
+}
+
+/* avatar */
+.avatar {
+  grid-area: avatar;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.avatar__img {
+  width: 35px;
+  height: 35px;
+}
+.avatar__img img {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius-lg);
+  object-fit: cover;
+}
+.avatar__text {
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+@media screen and (min-width: 768px) {
+  .badge {
+    font-size: var(--font-size-lg);
+    padding: 1rem 1.8rem;
+  }
+  .current-requests {
+    padding: 0 2rem;
+  }
+  .item {
+    padding: 1.8rem;
+  }
+  .current-requests__title {
+    font-size: var(--font-size-xl);
+    margin: 3rem 0 6rem 0;
+  }
+  .current-requests__items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .items__content__title h2 {
+    font-size: var(--font-size-lg);
+  }
+  .avatar__img {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .btn {
+    font-size: var(--font-size-md);
+    padding: 2rem 1.5rem;
+  }
+  .current-requests__items {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
